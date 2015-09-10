@@ -15,8 +15,9 @@ destination: ../cesi02.github.io-pages/
 # Branch defaults to "source" for USERNAME.github.io
 # or "master" otherwise
 username: cesi02
-repo: cesi02.github.io
-branch: source
+
+
+
 markdown: kramdown
 permalink: pretty
 
