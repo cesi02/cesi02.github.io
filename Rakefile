@@ -199,9 +199,16 @@ namespace :site do
 
     # Configure git if this is run in Travis CI
     if ENV["TRAVIS"]
+      sh "git remote set-url --push origin #{REPO}"
+      sh "git remote set-branches --add origin #{DESTINATION_BRANCH}"
+      sh 'git fetch -q'
+
       sh "git config --global user.name '#{ENV['GIT_NAME']}'"
       sh "git config --global user.email '#{ENV['GIT_EMAIL']}'"
       sh "git config --global push.default simple"
+      sh 'git config credential.helper "store --file=.git/credentials"'
+      File.open('.git/credentials', 'w') do |f|
+        f.write("https://#{ENV['GH_TOKEN']}:x-oauth-basic@github.com")
     end
 
     # Make sure destination folder exists as git repo
