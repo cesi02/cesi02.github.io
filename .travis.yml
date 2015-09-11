@@ -2,10 +2,6 @@ language: ruby
 rvm:
   - 2.1 
 
-before_install:
-  - bundle install
-
-
 script: . ./script/cibuild 
 
 env:
