@@ -12,5 +12,5 @@ git rm -rf .
 cp -a ../cesi02.github.io-pages/* .
 touch .nojekyll
 git add -A
-git commit -m "Updated website @ $(time)"
+git commit -m "Updated website"
 git push -f origin master
