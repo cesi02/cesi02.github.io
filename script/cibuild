@@ -10,10 +10,10 @@ git config --global user.email "${GIT_EMAIL}"
 git config --global push.default simple
 git checkout source
 bundle exec jekyll build
-cd ../cesi02.github.io-pages
+#cd ../cesi02.github.io-pages
 #bundle exec htmlproof ./ --disable-external --only-4xx --check-html
-cd $P
-git checkout master
+
+git checkout --orphan master
 git rm -rf .
 cp -a ../cesi02.github.io-pages/* .
 git add -A
