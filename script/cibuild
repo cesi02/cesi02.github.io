@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
 set -e # halt script on error
+sh "git clone https://#{ENV['GIT_NAME']}:#{ENV['GH_TOKEN']}@github.com/#{USERNAME}/#{REPO}.git out"
+cd out
+git config --global user.name '#{ENV['GIT_NAME']}'
+git config --global user.email '#{ENV['GIT_EMAIL']}'
+git config --global push.default simple
 git checkout source
 bundle exec jekyll build
 
@@ -11,3 +16,4 @@ git rm -rf .
 cp -a ../cesi02.github.io-pages/* .
 git add -A
 git commit -m uw
+git push origin source
