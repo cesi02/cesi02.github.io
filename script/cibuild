@@ -2,20 +2,20 @@
 set -e
 git remote rm origin
 git remote add origin https://${GH_TOKEN}@github.com/cesi02/cesi02.github.io.git 
-P=$PWD
-
 git config --global user.name "${GIT_NAME}"
 git config --global user.email "${GIT_EMAIL}"
 git config --global push.default simple
 git checkout source
+
 bundle exec jekyll build
-git push origin source
+
 #cd ../cesi02.github.io-pages
 #bundle exec htmlproof ./ --disable-external --only-4xx --check-html
 
 git checkout --orphan master
 git rm -rf .
 cp -a ../cesi02.github.io-pages/* .
+touch .nojekyll
 git add -A
 git commit -m uw
 git push -f origin master
