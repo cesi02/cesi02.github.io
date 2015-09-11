@@ -4,8 +4,7 @@ safe: false
 lsi: false
 pygments: true
 
-relative_source: cesi02.github.io/
-destination: cesi02.github.io-pages/
+destination: ../cesi02.github.io-pages/
 
 # Settings for deploy rake task
 # Username and repo of Github repo, e.g.
