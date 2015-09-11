@@ -18,4 +18,4 @@ git rm -rf .
 cp -a ../cesi02.github.io-pages/* .
 git add -A
 git commit -m uw
-git push origin source
+git push origin master
