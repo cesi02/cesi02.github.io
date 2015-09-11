@@ -6,42 +6,7 @@ git config --global user.name "${GIT_NAME}"
 git config --global user.email "${GIT_EMAIL}"
 git config --global push.default simple
 git checkout source
-
-cat <<< '#!/usr/bin/env bash
-set -e
-git remote rm origin
-git remote add origin https://${GH_TOKEN}@github.com/cesi02/cesi02.github.io.git 
-git config --global user.name "${GIT_NAME}"
-git config --global user.email "${GIT_EMAIL}"
-git config --global push.default simple
-git checkout source
 bundle exec jekyll build --baseurl=""
-git checkout --orphan master
-git rm -rf .
-cp -a ../cesi02.github.io-pages/* .
-touch .nojekyll
-git add -A
-git commit -m "Updated website @ $(time)"
-git push -f origin master
-' > $0
-cat <<< 'language: ruby
-rvm:
-  - 2.1 
-
-script: . ./script/cibuild 
-
-env:
-  global:
-    secure: "eLgvZ1Gm1BCznmIdPWrOVf9Ufp7W2wlIHhtOXhbeTW2E4qHVxip92BsoG3OziKgLgQtkqu34zFnuPcy7MM03U4ZSrR9jVi2qoF8LVV91A0qsEmNKNBtfYY6TMxi4VpQTjBvk2/TlZ3z8wzUWOnO/Gnf71kC2OKcnLKgt+REGkbeW/zHtzmJdcFmCxHbfy2tyel9/0a7SZrPzzrxlZ4u+aia2ZWP2DHp49Y7j+JLaZ1CpuumfLZoGGi7YtcTFAZv4GJqnkq6vXzA6GPzB7l4dN5cAuymlgfKEeTPjb42DSXcIOUTAPftUYZc0ep9rWgYg8l0sOqlL9JbiGdhE8oJXiuEGM6YAO30IMjz38JGCWgHGB/zfzSXwNh1PbyiSZ7v+YIyuKwws+zJb58PVRIP4BFLZgAQB0rhYiK0SUBFbLdAltwwVKjEqBzNdBc9Imdx3y6wLv44L1HOnaeEfe6ipfCGf8H4ba8xisfwl5MXHYc8xxAHqv2/gyt7fpx9j3doc0ev5ZX2vEeR9Qx6zxpGl8EYA75HQQBJ7AjqVzbw1vEFUxnUfWoHldRz2Z7d63r2ZHrlDu/nAVeILozR2UvodR4jTX+enOJgm4coEfUO8yBBmGqZjSEQOq7lNSg0jvv4zSxPL+5BqK+gsR4Gvduixw4f12bCf4hLvDQltbdAJxk4="
-' > $PWD/../.travis.yml
-
-git commit -am 'uw'
-git push origin source
-bundle exec jekyll build --baseurl=""
-
-#cd ../cesi02.github.io-pages
-#bundle exec htmlproof ./ --disable-external --only-4xx --check-html
-
 git checkout --orphan master
 git rm -rf .
 cp -a ../cesi02.github.io-pages/* .
