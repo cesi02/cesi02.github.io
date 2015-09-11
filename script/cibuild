@@ -11,7 +11,7 @@ git config --global push.default simple
 git checkout source
 bundle exec jekyll build
 cd ../cesi02.github.io-pages
-bundle exec htmlproof ./ --disable-external --only-4xx --check-favicon --check-html
+bundle exec htmlproof ./ --disable-external --only-4xx --check-html
 cd $P
 git checkout master
 git rm -rf .

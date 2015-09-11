@@ -34,7 +34,7 @@ exclude:
 
 
 url: http://cesi02.github.io
-
+baseurl: /
 # Site settings
 title: CE.S.I.02 S.R.L
 email: info@cesi02.it
