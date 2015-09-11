@@ -11,6 +11,11 @@ git checkout --orphan master
 git rm -rf .
 cp -a ../cesi02.github.io-pages/* .
 touch .nojekyll
+echo '
+branches:
+  except:
+    - master
+' >.travis.yml
 git add -A
 git commit -m "Updated website"
 git push -f origin master
