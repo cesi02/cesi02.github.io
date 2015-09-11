@@ -5,7 +5,7 @@ rvm:
 before_install:
   - bundle install
 
-script: ./script/cibuild 
+script: . ./script/cibuild 
 
 env:
   global:
