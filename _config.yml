@@ -5,7 +5,6 @@ lsi: false
 pygments: true
 
 destination: ../cesi02.github.io-pages/
-
 # Settings for deploy rake task
 # Username and repo of Github repo, e.g.
 # https://github.com/cesi02/cesi02.github.io.git
