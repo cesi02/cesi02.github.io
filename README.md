@@ -1,5 +1,7 @@
 Agency Jekyll theme
 ====================
+[![Build Status](https://travis-ci.org/cesi02/cesi02.github.io.svg?branch=source)](https://travis-ci.org/cesi02/cesi02.github.io)
+
 
 Agency theme based on [Agency bootstrap theme ](http://startbootstrap.com/templates/agency/)
 
