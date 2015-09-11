@@ -1,6 +1,6 @@
 language: ruby
 
-before_script:
+before_install:
   - bundle install
 
 script: ./script/cibuild 
