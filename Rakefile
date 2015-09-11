@@ -209,6 +209,7 @@ namespace :site do
       sh 'git config credential.helper "store --file=.git/credentials"'
       File.open('.git/credentials', 'w') do |f|
         f.write("https://#{ENV['GH_TOKEN']}:x-oauth-basic@github.com")
+      end
     end
 
     # Make sure destination folder exists as git repo
