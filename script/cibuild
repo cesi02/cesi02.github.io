@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
 set -e # halt script on error
-sh "git clone https://#{ENV['GIT_NAME']}:#{ENV['GH_TOKEN']}@github.com/#{USERNAME}/#{REPO}.git out"
-cd out
+git remote rm origin
+git remote add origin https://#{ENV['GIT_NAME']}:#{ENV['GH_TOKEN']}@github.com/#{USERNAME}/#{REPO}.git 
+
+
 git config --global user.name '#{ENV['GIT_NAME']}'
 git config --global user.email '#{ENV['GIT_EMAIL']}'
 git config --global push.default simple
