@@ -16,7 +16,7 @@ branches:
   except:
     - master
 ' >.travis.yml
-rm -rf vendor
+rm -rf vendor .build
 git add -A
 git commit -m "Updated website"
 git push -f origin master
