@@ -197,12 +197,12 @@ namespace :site do
       exit
     end
 
-    # Configure git if this is run in Travis CI      
-    sh "git config --global user.name '#{ENV['GIT_NAME']}'"
-    sh "git config --global user.email '#{ENV['GIT_EMAIL']}'"
-    sh "git config --global push.default simple"
-    sh "git config user.name"
-    sh "git config user.email"
+    # Configure git if this is run in Travis CI
+    if ENV["TRAVIS"]
+      sh "git config --global user.name '#{ENV['GIT_NAME']}'"
+      sh "git config --global user.email '#{ENV['GIT_EMAIL']}'"
+      sh "git config --global push.default simple"
+    end
 
     # Make sure destination folder exists as git repo
     check_destination
@@ -218,7 +218,7 @@ namespace :site do
     Dir.chdir(CONFIG["destination"]) do
       sh "git add --all ."
       sh "git commit -m 'Updating to #{USERNAME}/#{REPO}@#{sha}.'"
-      sh "git push origin #{DESTINATION_BRANCH}"
+      sh "git push origin #{DESTINATION_BRANCH} --quiet"
       puts "Pushed updated branch #{DESTINATION_BRANCH} to GitHub Pages"
     end
   end
