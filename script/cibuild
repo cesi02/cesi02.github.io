@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -e # halt script on error
+git checkout source
+bundle exec jekyll build
+
+bundle exec htmlproof ../cesi02.github.io-pages --disable-external --only-4xx --check-favicon --check-html
+
+git checkout master
+git rm -rf .
+cp -a ../cesi02.github.io-pages/* .
+git add -A
+git commit -m uw
