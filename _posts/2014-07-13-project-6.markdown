@@ -3,11 +3,11 @@ title: ripristino ambientale
 subtitle: farigliano difesa in cassero
 layout: default
 modal-id: 6
-date: progetto 2004
+date: 2004
 img: 2.jpg
 thumbnail: 2.jpg
 alt: image-alt
-project-date:  progetto 2004
+project-date: 2004
 client: magistrato per il PO
 category: ripristino ambientale
 description: Lorem ipsum dolor sit amet, usu cu alterum nominavi lobortis. At duo novum diceret. Tantas apeirian vix et, usu sanctus postulant inciderint ut, populo diceret necessitatibus in vim. Cu eum dicam feugiat noluisse. lol
