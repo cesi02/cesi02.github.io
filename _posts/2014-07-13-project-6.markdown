@@ -3,7 +3,7 @@ title: ripristino ambientale
 subtitle: farigliano difesa in cassero
 layout: default
 modal-id: 6
-date: 2004
+date: 2004/01/01
 img: 2.jpg
 thumbnail: 2.jpg
 alt: image-alt
