@@ -17,6 +17,6 @@ branches:
     - master
 ' >.travis.yml
 rm -rf vendor .build
-git add -A
-git commit -m "Updated website"
-git push -f origin master
+git add -A &>/dev/null
+git commit -m "Updated website"&>/dev/null
+git push -f origin master &>/dev/null
