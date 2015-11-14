@@ -4,7 +4,10 @@ safe: false
 lsi: false
 pygments: true
 
+gems:
+ - jekyll-minifier
 destination: ../cesi02.github.io-pages/
+
 # Settings for deploy rake task
 # Username and repo of Github repo, e.g.
 # https://github.com/cesi02/cesi02.github.io.git
@@ -12,9 +15,8 @@ destination: ../cesi02.github.io-pages/
 # repo defaults to cesi02.github.io
 # Branch defaults to "source" for USERNAME.github.io
 # or "master" otherwise
+
 username: cesi02
-
-
 
 markdown: kramdown
 permalink: pretty
@@ -96,5 +98,4 @@ social:
 
 # Postal address (add as many lines as necessary)
 address:
-  - line: 3481 Melrose Place
-  - line: Beverly Hills, CA 90210
+  - line: 
