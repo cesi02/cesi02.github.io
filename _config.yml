@@ -4,8 +4,6 @@ safe: false
 lsi: false
 pygments: true
 
-gems:
- - jekyll-minifier
 destination: ../cesi02.github.io-pages/
 
 # Settings for deploy rake task
@@ -33,6 +31,7 @@ exclude:
   - "*.Rmd"
   - vendor
   - .travis.yml
+  - bundle
 
 
 url: http://cesi02.it
