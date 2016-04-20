@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -e
+git remote rm origin
+git remote add origin https://${GH_TOKEN}@github.com/cesi02/cesi02.github.io.git 
+git config --global user.name "${GIT_NAME}"
+git config --global user.email "${GIT_EMAIL}"
+git config --global push.default simple
+git checkout source
+bundle exec jekyll build
+git checkout --orphan master
+git rm -rf .
+cp -a ../cesi02.github.io-pages/* .
+touch .nojekyll
+echo '
+branches:
+  except:
+    - master
+' >.travis.yml
+rm -rf vendor .build
+git add -A &>/dev/null
+git commit -m "Updated website"&>/dev/null
+git push -f origin master &>/dev/null
