@@ -1,10 +1,11 @@
 $(function() {
-
+    /*
     $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
             // additional error messages or events
         },
+        
         submitSuccess: function($form, event) {
             // Prevent spam click and default submit behaviour
             $("#btnSubmit").attr("disabled", true);
@@ -15,7 +16,6 @@ $(function() {
             var email = $("input#email").val();
             var phone = $("input#phone").val();
             var message = $("textarea#message").val();
-            var domain = "4";
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
@@ -29,7 +29,6 @@ $(function() {
                     phone: phone,
                     email: email,
                     message: message,
-                    domain: domain
                 },
                 cache: false,
                 success: function(data) {
@@ -72,7 +71,7 @@ $(function() {
         filter: function() {
             return $(this).is(":visible");
         },
-    });
+    });*/
 
     $("a[data-toggle=\"tab\"]").click(function(e) {
         e.preventDefault();
